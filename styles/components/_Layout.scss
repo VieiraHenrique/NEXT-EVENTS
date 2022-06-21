@@ -1,6 +1,6 @@
 .header {
     @include container($ipadPro);
-    background-color: rgb(19, 19, 19);
+    background-color: rgb(14, 14, 14);
     height: 70px;
 
     .wrapper {
@@ -39,11 +39,6 @@
             @include p;
         }
     }
-}
-
-.mainContainer {
-    @include container($ipadPro);
-    margin: 0 0 30px;
 }
 
 .footer {

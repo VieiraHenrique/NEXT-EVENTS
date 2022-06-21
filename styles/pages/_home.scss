@@ -1,0 +1,7 @@
+.home {
+    h2 {
+        @include h3;
+        color: $yellow;
+        text-align: center;
+    }
+}

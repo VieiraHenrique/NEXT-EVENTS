@@ -1,70 +1,76 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  line-height: 1;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: $font-primary;
-  overflow-x: hidden;
+    font-family: $font-primary;
+    overflow-x: hidden;
+    background-color: rgb(24, 24, 25);
+    color: #fff;
 }
 
 body::-webkit-scrollbar {
-  width: 17px; /* width of the entire scrollbar */
+    width: 17px; /* width of the entire scrollbar */
 }
 body::-webkit-scrollbar-track {
-  background: #dbdbdb; /* color of the tracking area */
+    background: #dbdbdb; /* color of the tracking area */
 }
 body::-webkit-scrollbar-thumb {
-  background-color: rgb(136, 136, 136); /* color of the scroll thumb */
-  border-radius: 100px; /* roundness of the scroll thumb */
-  /* border: 3px solid orange; */ /* creates padding around scroll thumb */
+    background-color: rgb(136, 136, 136); /* color of the scroll thumb */
+    border-radius: 100px; /* roundness of the scroll thumb */
+    /* border: 3px solid orange; */ /* creates padding around scroll thumb */
 }
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 a {
-  text-decoration: none;
-  color: $black;
+    text-decoration: none;
+    color: $black;
 }
 
 input,
 textarea {
-  padding: 1rem;
-  border: none;
-  outline: none;
+    padding: 1rem;
+    border: none;
+    outline: none;
 }
 
 ::-moz-placeholder {
-  opacity: 1;
+    opacity: 1;
 }
 ::-webkit-input-placeholder {
-  opacity: 1;
+    opacity: 1;
 }
 ::-moz-placeholder {
-  opacity: 1;
+    opacity: 1;
 }
 :-ms-input-placeholder {
-  opacity: 1;
+    opacity: 1;
 }
 
 span {
-  display: block;
+    display: block;
 }
 
 .hidden {
-  display: none !important;
+    display: none !important;
+}
+
+.container {
+    @include container($ipadPro);
 }

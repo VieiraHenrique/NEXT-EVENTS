@@ -1,0 +1,7 @@
+.FourOFour {
+    text-align: center;
+    p {
+        color: rgb(225, 74, 74);
+        @include h3;
+    }
+}

@@ -8,7 +8,7 @@ export default function Layout({ children }) {
             <Head>
                 <title>DJ Events | Find the hottest parties</title>
                 <meta name="description" content="A website to check the best dj events around. For djs you can post your event so everybody can know about it" />
-                <meta name="keywords" content="music, dj, events, party"/>
+                <meta name="keywords" content="music, dj, events, party" />
             </Head>
             <header className="header">
                 <div className="wrapper">
@@ -21,11 +21,9 @@ export default function Layout({ children }) {
                 </div>
             </header>
 
-            <div className="mainContainer">
-                <div className="wrapper">{children}</div>
-            </div>
+            {children}
 
-            <footer className="footer">
+            <footer className="footer mt-2">
                 <hr />
                 <p className="mt-2 mb-2">@Copyright 2022. DJ Events</p>
             </footer>

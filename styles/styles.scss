@@ -1,3 +1,5 @@
+$yellow: rgb(255, 199, 102);
+
 @import "./utilities/vars";
 
 @import "./utilities/mixins/mixins-breakpoints";
@@ -10,5 +12,9 @@
 @import "./utilities/spacing";
 
 @import "./components/Layout";
-@import "./components/FourOFour";
 @import "./components/ShowCase";
+@import "./components/EventList";
+@import "./components/Card";
+
+@import "./pages/FourOFour";
+@import "./pages/home";

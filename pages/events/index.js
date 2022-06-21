@@ -1,12 +1,12 @@
 import axios from "axios";
-import EventList from "../components/EventList";
-import { CMS_URL } from "../lib/variables";
+import EventList from "../../components/EventList";
+import { CMS_URL } from "../../lib/variables";
 
 export default function EventsPage({events}) {
     return (
         <div className="container">
             <div className="wrapper">
-                <h2 className="mb-1 mt-1">List of all events</h2>
+                <h2 className="my-1 page-title">List of all events</h2>
                 <EventList events={events} />
             </div>
         </div>

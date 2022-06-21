@@ -1,0 +1,22 @@
+h1 {
+    @include h1;
+}
+
+h2 {
+    @include h2;
+}
+
+h3 {
+    @include h3;
+}
+
+p,
+li,
+a {
+    @include p;
+}
+
+.lead {
+    @include typo(22px);
+    line-height: 1;
+}

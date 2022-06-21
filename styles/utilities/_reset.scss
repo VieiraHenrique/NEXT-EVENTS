@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 17px; /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: #dbdbdb; /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(136, 136, 136); /* color of the scroll thumb */
+  border-radius: 100px; /* roundness of the scroll thumb */
+  /* border: 3px solid orange; */ /* creates padding around scroll thumb */
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+input,
+textarea {
+  padding: 1rem;
+  border: none;
+  outline: none;
+}
+
+::-moz-placeholder {
+  opacity: 1;
+}
+::-webkit-input-placeholder {
+  opacity: 1;
+}
+::-moz-placeholder {
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  opacity: 1;
+}
+
+span {
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}

@@ -7,7 +7,11 @@ export default function SingleEvent({ evt }) {
         <div className="single-event">
             <ShowCase title={evt.attributes.title} subtitle={evt.attributes.subtitle} img={evt.attributes.cover.data.attributes.formats.large.url} />
             <div className="container">
-                <div className="wrapper"></div>
+                <div className="wrapper">
+                    <p>{evt.attributes.date}</p>
+                    <p>{evt.attributes.venue}</p>
+                    <div dangerouslySetInnerHTML={{ __html: evt.attributes.description }}></div>
+                </div>
             </div>
         </div>
     );
@@ -23,8 +27,8 @@ export async function getStaticProps({ params }) {
         };
     } catch (err) {
         return {
-            notFound: true
-        }
+            notFound: true,
+        };
     }
 }
 
@@ -42,3 +46,5 @@ export async function getStaticPaths() {
         fallback: "blocking",
     };
 }
+
+

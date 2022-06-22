@@ -4,7 +4,6 @@ import ShowCase from "../components/ShowCase";
 import { CMS_URL } from "../lib/variables";
 
 export default function HomePage({ events }) {
-    console.log(events);
     return (
         <div className="home">
             <ShowCase title={"Welcome to DJ Events"} subtitle={"The place to be in order to know about the hottest parties"} img={"/images/home-cover.jpg"} />

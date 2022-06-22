@@ -3,7 +3,6 @@ import ShowCase from "../../components/ShowCase";
 import { CMS_URL } from "../../lib/variables";
 
 export default function SingleEvent({ evt }) {
-    console.log(evt);
     return (
         <div className="single-event">
             <ShowCase title={evt.attributes.title} subtitle={evt.attributes.subtitle} img={evt.attributes.cover.data.attributes.formats.large.url} />
@@ -15,12 +14,18 @@ export default function SingleEvent({ evt }) {
 }
 
 export async function getStaticProps({ params }) {
-    const { data } = await axios.get(CMS_URL + "/events/" + params.id + "?populate=*");
-    return {
-        props: {
-            evt: data.data,
-        },
-    };
+    try {
+        const { data } = await axios.get(CMS_URL + "/events/" + params.id + "?populate=*");
+        return {
+            props: {
+                evt: data.data,
+            },
+        };
+    } catch (err) {
+        return {
+            notFound: true
+        }
+    }
 }
 
 export async function getStaticPaths() {
@@ -34,6 +39,6 @@ export async function getStaticPaths() {
 
     return {
         paths: params,
-        fallback: false, // goes to 404 if not valid
+        fallback: "blocking",
     };
 }

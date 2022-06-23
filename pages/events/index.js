@@ -1,7 +1,7 @@
 import axios from "axios";
 import EventList from "../../components/EventList";
 import InternalError from "../../components/InternalError";
-import { CMS_URL } from "../../lib/variables";
+import { ADMIN_TOKEN, CMS_URL } from "../../lib/variables";
 
 export default function EventsPage({ events }) {
     if (events) {
@@ -14,13 +14,13 @@ export default function EventsPage({ events }) {
             </div>
         );
     } else {
-        return <InternalError/>
+        return <InternalError />;
     }
 }
 
 export async function getStaticProps(context) {
     try {
-        const { data } = await axios.get(CMS_URL + "/events");
+        const { data } = await axios.get(CMS_URL + "/events", { headers: { Authorization: "Bearer " + ADMIN_TOKEN } });
 
         return {
             props: {

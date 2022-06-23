@@ -1,7 +1,7 @@
 import axios from "axios";
 import InternalError from "../../components/InternalError";
 import ShowCase from "../../components/ShowCase";
-import { CMS_URL } from "../../lib/variables";
+import { ADMIN_TOKEN, CMS_URL } from "../../lib/variables";
 
 export default function SingleEvent({ evt }) {
     if (evt) {
@@ -24,7 +24,7 @@ export default function SingleEvent({ evt }) {
 
 export async function getStaticProps({ params }) {
     try {
-        const { data } = await axios.get(CMS_URL + "/events/" + params.id + "?populate=*");
+        const { data } = await axios.get(CMS_URL + "/events/" + params.id + "?populate=*", { headers: { Authorization: "Bearer " + ADMIN_TOKEN } });
         return {
             props: {
                 evt: data.data,
@@ -42,7 +42,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
     try {
-        const { data } = await axios.get(CMS_URL + "/events");
+        const { data } = await axios.get(CMS_URL + "/events", { headers: { Authorization: "Bearer " + ADMIN_TOKEN } });
 
         const params = data.data.map((elem) => {
             return {

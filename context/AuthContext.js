@@ -52,7 +52,7 @@ export default function AuthContextProvider({ children }) {
     const logout = async () => {
         try {
             const { data } = await axios.post(NEXT_URL + "/api/logout");
-            setUser(null)
+            setUser(null);
             router.push("/");
             checkUser();
         } catch (err) {

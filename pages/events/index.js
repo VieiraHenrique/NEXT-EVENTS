@@ -1,10 +1,14 @@
 import axios from "axios";
+import { useContext } from "react";
 import EventList from "../../components/EventList";
 import InternalError from "../../components/InternalError";
+import { AuthContext } from "../../context/AuthContext";
 import { ADMIN_TOKEN, CMS_URL } from "../../lib/variables";
 
 export default function EventsPage({ events }) {
-    if (events) {
+    const { user } = useContext(AuthContext);
+
+    if (events && user) {
         return (
             <div className="container">
                 <div className="wrapper">

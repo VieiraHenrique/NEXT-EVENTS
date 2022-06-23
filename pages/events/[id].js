@@ -33,18 +33,22 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const { data } = await axios.get(CMS_URL + "/events");
+    try {
+        const { data } = await axios.get(CMS_URL + "/events");
 
-    const params = data.data.map((elem) => {
+        const params = data.data.map((elem) => {
+            return {
+                params: { id: `${elem.id}` },
+            };
+        });
+
         return {
-            params: { id: `${elem.id}` },
+            paths: params,
+            fallback: "blocking",
         };
-    });
-
-    return {
-        paths: params,
-        fallback: "blocking",
-    };
+    } catch (err) {
+        return {
+            paths: null,
+        };
+    }
 }
-
-

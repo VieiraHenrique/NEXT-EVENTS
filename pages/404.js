@@ -13,7 +13,7 @@ export default function FourOFourPage() {
         } else {
             router.push("/");
         }
-    }, [counter]);
+    }, [counter, router]);
 
     return (
         <div className="FourOFour">
